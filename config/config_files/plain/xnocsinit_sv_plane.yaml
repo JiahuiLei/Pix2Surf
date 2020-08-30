@@ -1,0 +1,25 @@
+DATASET_ROOT: 'shapenet_plain'
+DATASET: 'neurips_dataset'
+PROPORTION: 1.0
+DATASET_INDEX: ['resource/index/shapenet_plain_plane_train.json',
+                'resource/index/shapenet_plain_plane_test.json']
+
+MODES: ['train']
+MODEL: 'neurips_baseline'
+
+GPU: [0,1]
+BATCHSIZE:  16
+DATALOADER_WORKERS: 6
+EPOCH_TOTAL: 30
+LR: 1e-4
+
+LOG_DIR: 'xnocs-init-sv-plane-plain'
+LOGGER: 'logger_s1'
+LOGGER_SELECT: ['metric','image','model']
+MODEL_SAVE_PER_N_EPOCH: 5
+VIS_PER_N_BATCH: 50
+VIS_ONE_PER_BATCH: True
+VIS_TRAIN_PER_BATCH: 100
+
+BACKUP_FILES: ['core/net_bank/xnocs_segnet.py',
+               'core/net_bank/loss.py']

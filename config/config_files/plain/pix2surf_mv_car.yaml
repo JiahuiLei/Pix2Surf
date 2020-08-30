@@ -1,0 +1,33 @@
+DATASET_ROOT: 'shapenet_plain'
+DATASET: 'mv5_correspondence_dataset'
+ADD_BACKGROUND_NOISE: True
+PROPORTION: 1.0
+DATASET_INDEX: ['resource/index/shapenet_plain_car_train.json',
+                'resource/index/shapenet_plain_car_test.json']
+MODES: ['train']
+MODEL: 'pix2surf_mv'
+
+GPU: [0,1]
+BATCHSIZE: 4
+DATALOADER_WORKERS: 6
+EPOCH_TOTAL: 30
+LR: 1e-4
+
+LOG_DIR: 'pix2surf-mv-car-plain'
+LOGGER: 'logger_s1'
+LOGGER_SELECT: ['metric','image','model','xls']
+MODEL_SAVE_PER_N_EPOCH: 3
+VIS_PER_N_EPOCH: 1
+VIS_PER_N_BATCH: 50
+VIS_ONE_PER_BATCH: True
+VIS_TRAIN_PER_BATCH: 100
+
+RESUME: False
+MODEL_INIT_PATH: ['log/pix2surf-sv-car-plain/model/epoch_30.model']
+
+
+BACKUP_FILES: ['core/net_bank/pix2surf_cnn.py',
+               'core/net_bank/mlp.py',
+               'core/net_bank/loss.py',
+               'core/models/utils/model_utils.py',
+               'core/models/utils/render_utils.py']
